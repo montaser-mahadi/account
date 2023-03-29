@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: montasermahadi/account:latest
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - montasermahadi-network
+
+  loans:
+    image: montasermahadi/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - montasermahadi-network
+
+  cards:
+    image: montasermahadi/cards:latest
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - montasermahadi-network
+
+networks:
+  montasermahadi-network:
